@@ -1,0 +1,17 @@
+﻿@model MatchTechWebsite.Models.ManagerViewModel;
+
+
+
+<h1>Manager</h1>
+
+<a class="tournament-create btn" asp-action="Create">Create</a>
+
+
+@foreach (var item in Model.Tournaments)
+{
+    <p>@Html.DisplayFor(modelItem => item.Name)</p> 
+    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+}
+
+

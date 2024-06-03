@@ -1,0 +1,38 @@
+﻿html, body {
+    background-color: #efeff9;
+}
+
+.match-tournament {
+    display: flex;
+    grid-template-columns: repeat(auto, auto);
+/*    text-align: center;*/
+}
+
+.match-container {
+    padding: 1rem;
+    margin-top: 1rem;
+    padding-bottom: 800px;
+}
+
+.match-tile {
+    background-color: #fafafa;
+    margin: 10px;
+}
+
+.draggable {
+    width: 320px;
+    padding: 1rem;
+/*    background-color: white;*/
+/*    border: 1px solid black;*/
+    cursor: move;
+}
+
+.draggable.dragging {
+    opacity: .5;
+}
+
+.tournament-create {
+    width: 30vw;
+/*    text-align: center;*/
+    background-color: red;
+}

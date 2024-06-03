@@ -1,0 +1,58 @@
+﻿@model MatchTechWebsite.Models.MatchDay;
+
+
+
+
+<!-- Earnings (Monthly) Card Example -->
+<div class="card border-left-primary shadow py-2 match-tile draggable" draggable="true" id="@Model.Match.Id">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2 matchdetails">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        @Model.Match.HomeTeamKeyNavigation.Name vs @Model.Match.AwayTeamKeyNavigation.Name
+                    </div>
+                    <div class="h6 mb-0 font-weight-bold text-gray-400 matchtiledatetime">@Model.Match.DateTime</div>
+                    <div class="h6 mb-0 font-weight-bold text-gray-400 matchtilefieldkey">@Model.Match.FieldKeyNavigation.Name</div>
+                </div>
+            </div>
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="matchtileform">
+                        <input class="form-control match-dateTime" asp-for="@Model.Match.DateTime" asp-format="{0:yyyy-MM-ddTHH:mm}" />
+                        <select onclick="getAvaialableFields(@Model.Match.Id)"  id="select-spec" readonly asp-for="@Model.Match.FieldKey" class="form-control">
+                            <option value="@Model.Match.FieldKey" selected>@Model.Match.FieldKeyNavigation.Name</option>
+                            <option value="1">s2</option>
+                            <option value="1">s1</option>
+                            <option value="1">s4</option>
+                            <option value="1">s6</option>
+                        </select>
+                        <button onclick="saveMatchTile(@Model.Match.Id)">Save</button>
+                    </div>
+                    <button onclick="myFunction(@Model.Match.Id)">arrow</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--
+    <div class="match-tile draggable" draggable="true" id="@Model.Match.Id">
+    <p>@Model.Match.HomeTeamKeyNavigation.Name vs @Model.Match.AwayTeamKeyNavigation.Name</p>
+    <div class="matchtile-fields">
+        <p class="matchtiledatetime">@Model.Match.DateTime</p>
+        <p class="matchtilefieldkey">@Model.Match.FieldKeyNavigation.Name</p>
+    </div>
+
+    <div class="matchtileform">
+        <input class="form-control match-dateTime" asp-for="@Model.Match.DateTime" asp-format="{0:yyyy-MM-ddTHH:mm}" />
+        <select id="select-spec" readonly asp-for="@Model.Match.FieldKey" class="form-control">
+            <option value="@Model.Match.FieldKey" selected>@Model.Match.FieldKeyNavigation.Name</option>
+            <option value="1">s2</option>
+            <option value="1">s1</option>
+            <option value="1">s4</option>
+            <option value="1">s6</option>
+        </select>
+        <button onclick="saveMatchTile(@Model.Match.Id)">Save</button>
+    </div>
+    <button onclick="myFunction(@Model.Match.Id)">arrow</button>
+</div>
+-->

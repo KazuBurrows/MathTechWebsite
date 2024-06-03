@@ -1,0 +1,16 @@
+﻿@model MatchTechWebsite.Models.ManagerEditViewModel;
+
+<script src="~/js/script.js" defer></script>
+
+<div class="match-tournament">
+    @foreach (var matchWeek in Model.MatchWeeks)
+    {
+        <div class="match-container" weekId="@matchWeek.Id">
+            <span>Week @matchWeek.Week</span>
+            @foreach (var match in matchWeek.MatchDays)
+            {
+                @await Component.InvokeAsync("MatchTile", new { match = match });
+            }
+        </div>
+    }
+</div>

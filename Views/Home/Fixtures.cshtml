@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MatchTechWebsite.sakila.Matchdayfixture>
+
+@{
+    ViewData["Title"] = "Fixtures";
+}
+
+
+<!-- Filter -->
+<div>
+    
+</div>
+
+<!-- Fixtures -->
+<div>
+    <!-- Date Monday 15 April 2024-->
+    <ul>
+        <!-- Match -->
+        @foreach (var item in Model)
+        {
+            <li>
+                @Html.DisplayFor(modelItem => item.HomeTeamKeyNavigation.Name) vs @Html.DisplayFor(modelItem => item.AwayTeamKeyNavigation.Name)        @Html.DisplayFor(modelItem => item.FieldKeyNavigation.Name)
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,46 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.matchtile-form {
+/*    display: none;*/
+}
+
+.table {
+
+
+}
+
+tr {
+    border-radius: 25px;
+}
+
+td:first-child,
+th:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+// Set border-radius on the top-right and bottom-right of the last table data on the table row
+td:last-child,
+th:last-child {
+    border-radius: 0 10px 10px 0;
+}

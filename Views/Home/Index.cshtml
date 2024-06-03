@@ -1,0 +1,61 @@
+﻿@model MatchTechWebsite.Models.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+
+<form asp-controller="Home" asp-action="Index" method="get">
+    <select asp-for="tournamentId">
+        <option value="@null">All</option>
+
+        @foreach (var item in Model.Tournaments)
+        {
+            <option value=@item.Id>@item.Name</option>
+        }
+    </select>
+
+    Team Search: <input type="text" asp-for="SearchString" placeholder="FC Twenty, Falcons, ..." />
+    <input type="submit" value="Search" />
+</form>
+
+
+
+
+@if (Model.matchdayfixtures != null)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.matchdayfixtures![0].DateTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.matchdayfixtures![0].HomeTeamKeyNavigation.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.matchdayfixtures![0].AwayTeamKeyNavigation.Name)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.matchdayfixtures)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HomeTeamKeyNavigation.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AwayTeamKeyNavigation.Name)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
